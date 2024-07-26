@@ -31,10 +31,11 @@ def main():
     print("3. 은가누 주먹!")
     print("4. 은가누 발차기!")
 
+    num1 = 100
+    num2 = 100
+
     while True:
         choice = input("Enter choice (1/2/3/4): ")
-        num1 = 100
-        num2 = 100
         num3 = random.randint(1, 10)
         if choice in ['1', '2', '3', '4']:
             if 1 < num1 :
