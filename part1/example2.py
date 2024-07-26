@@ -34,26 +34,31 @@ def main():
     while True:
         choice = input("Enter choice (1/2/3/4): ")
         num1 = 100
-        num2 = random.randint(1, 10)
+        num2 = 100
+        num3 = random.randint(1, 10)
         if choice in ['1', '2', '3', '4']:
-            if 0 < num1 :
+            if 1 < num1 :
                 if choice == '1':
-                    print(f"Damage: {num2} sliver life: {fight.kim_punch(num1, num2)}")
+                    print(f"Damage: {num3} sliver life: {fight.kim_punch(num2, num3)}")
                 elif choice == '2':
-                    print(f"Damage: {num2} sliver life: {fight.kim_kick(num1, num2)}")
+                    print(f"Damage: {num3} sliver life: {fight.kim_kick(num2, num3)}")
                 elif choice == '3':
-                    print(f"Damage: {3 * num2} kim life: {fight.sliver_punch(num1, num2)}")
+                    print(f"Damage: {3 * num3} kim life: {fight.sliver_punch(num1, num3)}")
                 elif choice == '4':
-                    print(f"Damage: {num2} kim life: {fight.sliver_kick(num1, num2)}")
+                    print(f"Damage: {num3} kim life: {fight.sliver_kick(num1, num3)}")
             else :
-                print("--Done--")
+                if num1 < num2 :
+                    print("--sliver win--")
+
+                else :
+                    print("--kim win--")
 
         else:
             print("Invalid choice! Please select from 1, 2, 3, or 4.")
 
-        num3 = input("Do you want to perform another calculation? (yes/no): ")
+        num4 = input("Do you want to perform another calculation? (yes/no): ")
         
-        if num3.lower() == 'no':
+        if num4.lower() == 'no':
             break
 
 if __name__ == "__main__":
