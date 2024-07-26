@@ -38,13 +38,13 @@ def main():
         if choice in ['1', '2', '3', '4']:
             if 0 < num1 :
                 if choice == '1':
-                    print(f"Damage: {num1} sliver life: {fight.kim_punch(num1, num2)}")
+                    print(f"Damage: {num2} sliver life: {fight.kim_punch(num1, num2)}")
                 elif choice == '2':
-                    print(f"Damage: {num1} sliver life: {fight.kim_kick(num1, num2)}")
+                    print(f"Damage: {num2} sliver life: {fight.kim_kick(num1, num2)}")
                 elif choice == '3':
-                    print(f"Damage: {num1} kim life: {fight.sliver_punch(num1, num2)}")
+                    print(f"Damage: {3 * num2} kim life: {fight.sliver_punch(num1, num2)}")
                 elif choice == '4':
-                    print(f"Damage: {num1} kim life: {fight.sliver_kick(num1, num2)}")
+                    print(f"Damage: {num2} kim life: {fight.sliver_kick(num1, num2)}")
             else :
                 print("--Done--")
 
