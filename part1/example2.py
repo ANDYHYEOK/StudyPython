@@ -5,48 +5,31 @@
 # 격투기 선수 두명 김동현 vs 은가누 <= 격투기선수()
 
 import random
---------------------------------------------------
-class fighterClass:
-  
-    def __init__(self):
-        pass
-
-    def userInput(self):
-        userName = input("user name: ")
-        return userName
-
-    def statusInput(self):
-        h = float(input("height: "))
-        w = float(input("weight: "))
-        return h + w
-
-    def attack(self, x):
-        y = random.randint(1, 100)
-        return x - y
---------------------------------------------------
+class Fighter:
+    def Attack(Name, Height, Weight):
+        Attack = random.randint(1, Weight)
+        print("attack: " + Attack + "/" + Name + "life: " + (Height - Attack))
+    def ():
+    def ():
 def main():
-    f = fighterClass()
-  
     print("user status: ")
-    username = f.userInput
-    userlife = f.statusInput
-  
+    NameUser = input("user name: ")
+    HeightUser = float(input("user height: "))
+    WeightUser = float(input("user weight: "))
     print("enemy status: ")
-    enemyname = f.userInput
-    enemylife = f.statusInput
-
+    NameEnemy = input("enemy name: ")
+    HeightEnemy = float(input("enemy height: "))
+    WeightEnemy = float(input("enemy weight: "))
     while True:
-        user = f.attack(0)
-        enemy = f.attack(0)
-        if user < enemy:
-            print(f"damage: {enemy * (-1)}")
-            print(f"user life: {f.attack(userlife)}")
-        else:
-            print(f"damage: {user * (-1)}")
-            print(f"enemy life: {f.attack(enemylife)}")
-        c = input("continue? (yes/no): ")
-        if c.lower() == 'no':
+        UserFighter = Fighter()
+        EnemyFighter = Fighter()
+        UserFighter.Attack(NameEnemy, HeightUser, WeightUser)
+        EnemyFighter.Attack(NameUser, HeightEnemy, WeightEnemy)
+        if HeightUser < HeightEnemy:
+            print("winner: " + NameEnemy)
             break
---------------------------------------------------
+        else:
+            print("winner: " + NameUser)
+            break
 if __name__ == "__main__":
     main()
