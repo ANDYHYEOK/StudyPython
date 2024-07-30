@@ -7,10 +7,14 @@
 import random
 class Fighter:
     def Attack(Name, Height, Weight):
-        Attack = random.randint(1, Weight)
-        print("attack: " + Attack + "/" + Name + "life: " + (Height - Attack))
-    def ():
-    def ():
+        Damage = random.randint(1, Weight)
+        life = Height - Damage
+        print("attack: " + Damage + "/" + Name + "life: " + life)
+    def Winner(User, Enemy):
+        if User < Enemy:
+            print("winner: " + NameEnemy)
+        else:
+            print("winner: " + NameUser)
 def main():
     print("user status: ")
     NameUser = input("user name: ")
@@ -20,16 +24,17 @@ def main():
     NameEnemy = input("enemy name: ")
     HeightEnemy = float(input("enemy height: "))
     WeightEnemy = float(input("enemy weight: "))
+    Round = 1
     while True:
         UserFighter = Fighter()
         EnemyFighter = Fighter()
+        print("round" +  Round)
         UserFighter.Attack(NameEnemy, HeightUser, WeightUser)
         EnemyFighter.Attack(NameUser, HeightEnemy, WeightEnemy)
-        if HeightUser < HeightEnemy:
-            print("winner: " + NameEnemy)
+        if HeightUser = 0 or HeightEnemy = 0:
+            UserFighter.Winner(HeightUser, HeightEnemy)
             break
         else:
-            print("winner: " + NameUser)
-            break
+            Round++
 if __name__ == "__main__":
     main()
