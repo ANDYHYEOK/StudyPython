@@ -5,44 +5,48 @@
 # 격투기 선수 두명 김동현 vs 은가누 <= 격투기선수()
 
 import random
+
 class Fighter:
-    def __init__(self, name, height, weight):
-        self.name = name
-        self.height = height
-        self.weight = weight
-    def attack(self, enemy):
-        damage = random.randint(1, self.weight)
-        enemy.height -= damage
-        print(f"{self.name} attacks {enemy.name}")
-        print(f"damage: {damage}")
-        print(f"{enemy.name} life: {enemy.height}")
-    def winner(user, enemy):
-        if user.height <= 0:
-            print(f"winner: {enemy.name}")
-        if enemy.height <= 0:
-            print(f"winner: {user.name}")
+    def __init__(self):
+        self.name = input("name: ")
+        self.height = float(input("height: "))
+        self.weight = float(input("weight: "))
+
+    def attack(self, target):
+        damage = random.randint(1, int(self.weight))
+        target.height -= damage
+        print(f"{self.name} attacked! / {target.name} received {damage} damage! / {target.name} has {target.height} health remaining!")
+
+    def winner(self, target):
+        if self.height <= 0:
+            print(f"winner: {target.name}")
+        if target.height <= 0:
+            print(f"winner: {self.name}")
+
 def main():
     print("User status")
-    name_user = input("User name: ")
-    height_user = float(input("User height: "))
-    weight_user = float(input("User weight: "))
+    UserFighter = Fighter()
+
     print("Enemy status")
-    name_enemy = input("Enemy name: ")
-    height_enemy = float(input("Enemy height: "))
-    weight_enemy = float(input("Enemy weight: "))
-    user_fighter = Fighter(name_user, height_user, weight_user)
-    enemy_fighter = Fighter(name_enemy, height_enemy, weight_enemy)
+    EnemyFighter = Fighter()
+
     round = 1
-    while user_fighter.height > 0 and enemy_fighter.height > 0:
-        print(f"Round {round}")
-        user_fighter.attack(enemy_fighter)
-        if enemy_fighter.height <= 0:
-            Fighter.winner(user_fighter, enemy_fighter)
+
+    while UserFighter.height > 0 and EnemyFighter.height > 0:
+
+        print(f"Round {round}!")
+
+        UserFighter.attack(EnemyFighter)
+        if EnemyFighter.height <= 0:
+            UserFighter.winner(EnemyFighter)
             break
-        enemy_fighter.attack(user_fighter)
-        if user_fighter.height <= 0:
-            Fighter.winner(user_fighter, enemy_fighter)
+
+        EnemyFighter.attack(UserFighter)
+        if UserFighter.height <= 0:
+            EnemyFighter.winner(UserFighter)
             break
+
         round += 1
+        
 if __name__ == "__main__":
     main()
