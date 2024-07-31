@@ -32,7 +32,7 @@ def main():
     weight_enemy = float(input("Enemy weight: "))
     user_fighter = Fighter(name_user, height_user, weight_user)
     enemy_fighter = Fighter(name_enemy, height_enemy, weight_enemy)
-    round= 1
+    round = 1
     while user_fighter.height > 0 and enemy_fighter.height > 0:
         print(f"Round {round}")
         user_fighter.attack(enemy_fighter)
