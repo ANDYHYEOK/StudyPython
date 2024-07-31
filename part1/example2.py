@@ -19,7 +19,7 @@ class Fighter:
     def winner(user, enemy):
         if user.height <= 0:
             print(f"winner: {enemy.name}")
-        elif enemy.height <= 0:
+        if enemy.height <= 0:
             print(f"winner: {user.name}")
 def main():
     print("User status")
